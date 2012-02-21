@@ -1,0 +1,20 @@
+[user]
+    name = tangyue
+    email = tangyue1004@gmail.com
+[color]
+    ui = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    diff = auto
+[core]
+    editor = vim
+	excludesfile = /home/tangyue/.gitignore
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    oneline = log --oneline --decorate -25
+    onelog = log -p -1
+    glog = log --graph --decorate --oneline -25

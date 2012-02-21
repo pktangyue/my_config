@@ -1,0 +1,14 @@
+<VirtualHost *:80>
+ServerName cakephp.tangyue.com
+ServerAdmin tangyue1004@gmail.com
+DocumentRoot "/home/tangyue/project/cakephp"
+ErrorLog "/home/tangyue/project/cakephp/errors.log"
+CustomLog "/home/tangyue/project/cakephp/accesses.log" common    
+<Directory "/home/tangyue/project/cakephp">
+Options FollowSymLinks IncludesNOEXEC Indexes
+DirectoryIndex index.html index.htm index.php
+AllowOverride All
+Order Deny,Allow
+Allow from all
+</Directory>
+</VirtualHost>
