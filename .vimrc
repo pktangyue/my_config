@@ -606,6 +606,7 @@ syntax on
 set cursorline
 " jumpt to current line, after perltidy
 au FileType perl map <leader>pt <esc>mz:%!perltidy<cr>`z:w<cr>
+au FileType php map <leader>php <esc>:% ! php_beautifier --filters "ArrayNested() IndentStyles(style=k&r) NewLines(before=T_CLASS:T_COMMENT,after=T_COMMENT) EqualsAlign()"<CR>
 au BufRead,BufNewFile *.js set ft=javascript syntax=jquery
 let perl_fold = 1 "perl 折叠
 let perl_nofold_packages = 1 " perl 不折叠包
