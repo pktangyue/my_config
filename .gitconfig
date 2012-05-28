@@ -15,6 +15,7 @@
     ci = commit
     st = status
     br = branch
-    oneline = log --oneline --decorate -25
+    oneline = log --oneline --decorate -45
     onelog = log -p -1
-    glog = log --graph --decorate --oneline -25
+    glog = log --graph --decorate --oneline -45
+    amend = commit --amend -C HEAD
