@@ -19,3 +19,5 @@
     onelog = log -p -1
     glog = log --graph --decorate --oneline
     amend = commit --amend -C HEAD
+[push]
+    default = current
