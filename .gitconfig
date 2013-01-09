@@ -1,5 +1,5 @@
 [user]
-    name = tangyue
+    name = pktangyue
     email = tangyue1004@gmail.com
 [color]
     ui = auto
@@ -21,3 +21,5 @@
     amend = commit --amend -C HEAD
 [push]
     default = current
+[rerere]
+	enabled = true
