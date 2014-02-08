@@ -19,6 +19,8 @@
     onelog = log -p -1
     glog = log --graph --decorate --oneline
     amend = commit --amend -C HEAD
+    pr = pull --rebase
+    smu = submodule update
 [push]
     default = current
 [rerere]
