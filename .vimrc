@@ -672,10 +672,10 @@ map <silent> <leader>tl <esc>:TlistOpen<cr>
 
 command W w !sudo tee % >/dev/null
 
-map <left> :tabprevious<cr>
-map <right> :tabnext<cr>
-imap <left> <esc>:tabprevious<cr>
-map <right> <esc>:tabnext<cr>
+" map <left> :tabprevious<cr>
+" map <right> :tabnext<cr>
+" imap <left> <esc>:tabprevious<cr>
+" map <right> <esc>:tabnext<cr>
 
 let $django_path = '~/.pyvirtualenvs/genju/lib/python2.7/site-packages/django/'
 
@@ -827,6 +827,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <F3> :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.pyc$', '\~$']
 " }}
 
 " au FileType javascript call JavaScriptFold()
@@ -856,3 +857,5 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 " }}
+
+set foldlevel=99
