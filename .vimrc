@@ -859,3 +859,9 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 " }}
 
 set foldlevel=99
+
+" setting for python-mode {{
+let g:pymode_doc = 0
+let g:pymode_lint_on_write = 0
+let g:pymode_rope_goto_definition_cmd = 'e'
+" }}
