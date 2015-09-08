@@ -27,6 +27,7 @@ Plugin 'bling/vim-airline'
 Plugin 'docunext/closetag.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'Yggdroot/indentLine'
+Plugin 'tpope/vim-haml'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
