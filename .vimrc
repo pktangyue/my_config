@@ -23,6 +23,10 @@ Plugin 'vim-scripts/JavaScript-Indent'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'klen/python-mode'
 Plugin 'honza/vim-snippets'
+Plugin 'bling/vim-airline'
+Plugin 'docunext/closetag.vim'
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'Yggdroot/indentLine'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -389,8 +393,8 @@ map <leader>bd :Bclose<cr>
 map <leader>ba :1,300 bd!<cr>
 
 " Use the arrows to something usefull
-map <right> :bn<cr>
-map <left> :bp<cr>
+" map <right> :bn<cr>
+" map <left> :bp<cr>
 
 " Tab configuration
 map <leader>tn :tabnew<cr>
@@ -437,7 +441,7 @@ endtry
 set laststatus=2
 
 " Format the statusline
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
+" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
 
 
 function! CurDir()
@@ -670,12 +674,12 @@ let Tlist_Exit_OnlyWindow = 1          "如果taglist窗口是最后一个窗口
 let Tlist_Use_Horiz_Window = 0         "在右侧窗口中显示taglist窗口
 map <silent> <leader>tl <esc>:TlistOpen<cr>
 
-command W w !sudo tee % >/dev/null
+command! W w !sudo tee % >/dev/null
 
-" map <left> :tabprevious<cr>
-" map <right> :tabnext<cr>
-" imap <left> <esc>:tabprevious<cr>
-" map <right> <esc>:tabnext<cr>
+map <left> :tabprevious<cr>
+map <right> :tabnext<cr>
+imap <left> <esc>:tabprevious<cr>
+map <right> <esc>:tabnext<cr>
 
 let $django_path = '~/.pyvirtualenvs/genju/lib/python2.7/site-packages/django/'
 
@@ -864,4 +868,12 @@ set foldlevel=99
 let g:pymode_doc = 0
 let g:pymode_lint_on_write = 0
 let g:pymode_rope_goto_definition_cmd = 'e'
+" }}
+
+" setting for vim-airline {{
+let g:airline#extensions#tabline#enabled = 1
+" }}
+
+" setting for {{
+let g:indentLine_color_term = 89
 " }}
