@@ -28,7 +28,6 @@ Plugin 'bling/vim-airline'
 Plugin 'docunext/closetag.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'Yggdroot/indentLine'
-" Plugin 'P233/Syntax-highlighting-for-Sass'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -386,6 +385,7 @@ map <silent> <leader><cr> :noh<cr>
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
+noremap <leader>h <C-W>t
 map <C-l> <C-W>l
 
 " Close the current buffer
