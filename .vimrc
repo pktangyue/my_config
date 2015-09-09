@@ -11,6 +11,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-liquid'
+Plugin 'tpope/vim-haml'
 Plugin 'Shougo/neocomplete'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'Shougo/neosnippet.vim'
@@ -27,7 +28,7 @@ Plugin 'bling/vim-airline'
 Plugin 'docunext/closetag.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'Yggdroot/indentLine'
-Plugin 'tpope/vim-haml'
+" Plugin 'P233/Syntax-highlighting-for-Sass'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -869,6 +870,7 @@ set foldlevel=99
 let g:pymode_doc = 0
 let g:pymode_lint_on_write = 0
 let g:pymode_rope_goto_definition_cmd = 'e'
+set completeopt=menu
 " }}
 
 " setting for vim-airline {{
