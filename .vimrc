@@ -27,7 +27,10 @@ Plugin 'honza/vim-snippets'
 Plugin 'bling/vim-airline'
 Plugin 'docunext/closetag.vim'
 Plugin 'vim-scripts/matchit.zip'
-Plugin 'Yggdroot/indentLine'
+"Plugin 'Yggdroot/indentLine'
+Plugin 'nathanaelkane/vim-indent-guides'
+"Plugin 'Raimondi/delimitMate'
+Plugin 'rizzatti/dash.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -382,11 +385,12 @@ map <c-space> ?
 map <silent> <leader><cr> :noh<cr>
 
 " Smart way to move btw. windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
 noremap <leader>h <C-W>t
-map <C-l> <C-W>l
+noremap <C-l> <C-W>l
+noremap <leader>l <C-W>b
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>
@@ -877,6 +881,21 @@ set completeopt=menu
 let g:airline#extensions#tabline#enabled = 1
 " }}
 
-" setting for {{
-let g:indentLine_color_term = 89
+" setting for Yggdroot/indentLine {{
+" let g:indentLine_color_term = 89
+" }}
+
+" setting for nathanaelkane/vim-indent-guides {{
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=5
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=6
+let g:indent_guides_guide_size = 1
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+let g:indent_guides_start_level = 2
+" }}
+" setting for Raimondi/delimitMate {{
+"let delimitMate_balance_matchpairs = 1
+"let delimitMate_expand_cr = 1
+"let delimitMate_expand_space = 1
 " }}
