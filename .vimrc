@@ -21,7 +21,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/django.vim'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'vim-scripts/JavaScript-Indent'
-Plugin 'marijnh/tern_for_vim'
+"Plugin 'marijnh/tern_for_vim'
 Plugin 'klen/python-mode'
 Plugin 'honza/vim-snippets'
 Plugin 'bling/vim-airline'
@@ -391,6 +391,7 @@ noremap <C-h> <C-W>h
 noremap <leader>h <C-W>t
 noremap <C-l> <C-W>l
 noremap <leader>l <C-W>b
+noremap <leader>G <esc>gg=G``
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>
