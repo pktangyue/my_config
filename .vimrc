@@ -27,10 +27,11 @@ Plugin 'honza/vim-snippets'
 Plugin 'bling/vim-airline'
 Plugin 'docunext/closetag.vim'
 Plugin 'vim-scripts/matchit.zip'
-"Plugin 'Yggdroot/indentLine'
-Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
+"Plugin 'nathanaelkane/vim-indent-guides'
 "Plugin 'Raimondi/delimitMate'
 Plugin 'rizzatti/dash.vim'
+Plugin 'kien/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -167,7 +168,7 @@ autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set 7 lines to the curors - when moving vertical..
-set so=10
+set so=7
 
 set wildmenu "Turn on WiLd menu
 
@@ -229,9 +230,9 @@ if has("gui_running")
     colorscheme molokai
     set nu
 else
-    colorscheme molokai
+    set t_Co=256
     set background=dark
-
+    colorscheme molokai
     set nu
 endif
 
@@ -622,17 +623,17 @@ endfunction
 """"""""""""""""""""""""""""""
 " => MRU plugin
 """"""""""""""""""""""""""""""
-let MRU_Max_Entries = 400
-map <leader>f :MRU<CR>
+"let MRU_Max_Entries = 400
+"map <leader>f :MRU<CR>
 
 
 """"""""""""""""""""""""""""""
 " => Command-T
 """"""""""""""""""""""""""""""
-let g:CommandTMaxHeight = 15
-set wildignore+=*.o,*.obj,.git,*.pyc
-noremap <leader>j :CommandT<cr>
-noremap <leader>y :CommandTFlush<cr>
+"let g:CommandTMaxHeight = 15
+"set wildignore+=*.o,*.obj,.git,*.pyc
+"noremap <leader>j :CommandT<cr>
+"noremap <leader>y :CommandTFlush<cr>
 
 
 """"""""""""""""""""""""""""""
@@ -712,6 +713,7 @@ let g:go_fmt_command = "goimports"
 
 " settings for tomasr/molokai {{
 let g:rehash256=1
+"let g:molokai_original = 1
 " }}
 
 " settings for Shougo/neocomplete.vim {{
@@ -880,23 +882,29 @@ set completeopt=menu
 
 " setting for vim-airline {{
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 " }}
 
 " setting for Yggdroot/indentLine {{
-" let g:indentLine_color_term = 89
+let g:indentLine_color_term = 87
 " }}
 
 " setting for nathanaelkane/vim-indent-guides {{
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=5
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=6
-let g:indent_guides_guide_size = 1
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
-let g:indent_guides_start_level = 2
+"let g:indent_guides_auto_colors = 0
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=5
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=6
+"let g:indent_guides_guide_size = 1
+"let g:indent_guides_enable_on_vim_startup = 1
+"let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+"let g:indent_guides_start_level = 2
 " }}
 " setting for Raimondi/delimitMate {{
 "let delimitMate_balance_matchpairs = 1
 "let delimitMate_expand_cr = 1
 "let delimitMate_expand_space = 1
+" }}
+
+"setting for kien/ctrlp.vim {{
+let g:ctrlp_map = '<leader>f'
+let g:ctrlp_working_path_mode = 'c'
 " }}
