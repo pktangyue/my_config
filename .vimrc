@@ -841,6 +841,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <F3> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$']
+let g:NERDTreeMapOpenVSplit = 'v'
 " }}
 
 " au FileType javascript call JavaScriptFold()
@@ -907,4 +908,8 @@ let g:indentLine_color_term = 87
 "setting for kien/ctrlp.vim {{
 let g:ctrlp_map = '<leader>f'
 let g:ctrlp_working_path_mode = 'c'
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("h")': ['<c-i>'],
+    \ 'AcceptSelection("v")': ['<c-v>'],
+    \}
 " }}
