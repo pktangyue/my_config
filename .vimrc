@@ -869,10 +869,10 @@ endif
 let g:neosnippet#enable_snipmate_compatibility = 1
 
 " Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+let g:neosnippet#snippets_directory=['~/.vim/bundle/vim-snippets/snippets','~/.vim/bundle/pty-snippets']
 " }}
 
-set foldlevel=99
+set foldlevel=999
 
 " setting for python-mode {{
 let g:pymode_doc = 0
@@ -888,6 +888,7 @@ let g:airline_powerline_fonts = 1
 
 " setting for Yggdroot/indentLine {{
 let g:indentLine_color_term = 87
+let g:indentLine_fileTypeExclude = ['scss']
 " }}
 
 " setting for nathanaelkane/vim-indent-guides {{
@@ -907,7 +908,7 @@ let g:indentLine_color_term = 87
 
 "setting for kien/ctrlp.vim {{
 let g:ctrlp_map = '<leader>f'
-let g:ctrlp_working_path_mode = 'c'
+let g:ctrlp_working_path_mode = 'a'
 let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("h")': ['<c-i>'],
     \ 'AcceptSelection("v")': ['<c-v>'],
