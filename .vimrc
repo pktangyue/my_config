@@ -872,7 +872,7 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory=['~/.vim/bundle/vim-snippets/snippets','~/.vim/bundle/pty-snippets']
 " }}
 
-set foldlevel=999
+autocmd BufRead,BufNew,BufEnter * set foldlevel=999
 
 " setting for python-mode {{
 let g:pymode_doc = 0
