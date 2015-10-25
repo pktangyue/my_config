@@ -490,7 +490,7 @@ endfunction
 " => General Abbrevs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 iab xdate <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
-iab xhl {% highlight  %}<cr>{% endhighlight %}<esc>khhi
+iab xhl {% highlight %}<cr>{% endhighlight %}<esc>khhi
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
