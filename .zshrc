@@ -94,3 +94,4 @@ export LESS=FRX
 export DB_TEST_PWD='ch2m2_N3w'
 export DB_TEST_NAME='newchama'
 export DB_TEST_USR='newchama'
+alias vi=vim
