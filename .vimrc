@@ -914,3 +914,7 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("v")': ['<c-v>'],
     \}
 " }}
+
+" setting for rizzatti/dash.vim {{
+nmap <silent> <leader>d <Plug>DashSearch
+" }}
