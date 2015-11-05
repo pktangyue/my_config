@@ -717,6 +717,7 @@ let g:rehash256=1
 " }}
 
 " settings for Shougo/neocomplete.vim {{
+"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
@@ -748,9 +749,9 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-    " return neocomplete#close_popup() . "\<CR>"
+    " return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
     " For no inserting <CR> key.
-    return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+    return pumvisible() ? "\<C-y>" : "\<CR>"
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -758,19 +759,9 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplete#close_popup()."\<C-y>"
-inoremap <expr><C-e>  neocomplete#cancel_popup()."\<C-e>"
+inoremap <expr><C-e>  neocomplete#close_popup()."\<C-e>"
 " Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
-
-" For cursor moving in insert mode(Not recommended)
-"inoremap <expr><Left>  neocomplete#close_popup() . "\<Left>"
-"inoremap <expr><Right> neocomplete#close_popup() . "\<Right>"
-"inoremap <expr><Up>    neocomplete#close_popup() . "\<Up>"
-"inoremap <expr><Down>  neocomplete#close_popup() . "\<Down>"
-" Or set this.
-"let g:neocomplete#enable_cursor_hold_i = 1
-" Or set this.
-"let g:neocomplete#enable_insert_char_pre = 1
+"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
 " AutoComplPop like behavior.
 "let g:neocomplete#enable_auto_select = 1
@@ -854,15 +845,15 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
+            \ "\<Plug>(neosnippet_expand_or_jump)"
+            \: pumvisible() ? "\<C-n>" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
+            \ "\<Plug>(neosnippet_expand_or_jump)"
+            \: "\<TAB>"
 
 " For conceal markers.
 if has('conceal')
-  set conceallevel=2 concealcursor=niv
+    set conceallevel=2 concealcursor=niv
 endif
 
 " Enable snipMate compatibility feature.
@@ -876,8 +867,18 @@ autocmd BufRead,BufNew,BufEnter * set foldlevel=999
 
 " setting for python-mode {{
 let g:pymode_doc = 0
+let g:pymode_options = 1
+let g:pymode_virtualenv = 0
 let g:pymode_lint_on_write = 0
+let g:pymode_lint_unmodified = 1
+let g:pymode_lint_ignore = ""
+let g:pymode_rope_autoimport = 1
+let g:pymode_lint_cwindow = 0
+let g:pymode_rope_completion = 0
+let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope_goto_definition_cmd = 'e'
+let g:pymode_rope_organize_imports_bind = '<C-c>o'
+let g:pymode_rope_autoimport_bind = '<C-c>a'
 set completeopt=menu
 " }}
 
@@ -910,9 +911,9 @@ let g:indentLine_fileTypeExclude = ['scss']
 let g:ctrlp_map = '<leader>f'
 let g:ctrlp_working_path_mode = 'a'
 let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("h")': ['<c-i>'],
-    \ 'AcceptSelection("v")': ['<c-v>'],
-    \}
+            \ 'AcceptSelection("h")': ['<c-i>'],
+            \ 'AcceptSelection("v")': ['<c-v>'],
+            \}
 " }}
 
 " setting for rizzatti/dash.vim {{
