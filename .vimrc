@@ -274,6 +274,9 @@ set shiftwidth=4
 set tabstop=4
 set smarttab
 
+autocmd BufRead,BufNew,BufEnter *.html set shiftwidth=2
+autocmd BufRead,BufNew,BufEnter *.html set tabstop=2
+
 set lbr
 set tw=500
 
@@ -911,9 +914,10 @@ let g:indentLine_fileTypeExclude = ['scss']
 let g:ctrlp_map = '<leader>f'
 let g:ctrlp_working_path_mode = 'a'
 let g:ctrlp_prompt_mappings = {
-            \ 'AcceptSelection("h")': ['<c-i>'],
-            \ 'AcceptSelection("v")': ['<c-v>'],
-            \}
+    \ 'AcceptSelection("h")': ['<c-i>'],
+    \ 'AcceptSelection("v")': ['<c-v>'],
+    \}
+set wildignore+=*.pyc,*.mo
 " }}
 
 " setting for rizzatti/dash.vim {{
