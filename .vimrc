@@ -798,7 +798,8 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 if !exists('g:neocomplete#force_omni_input_patterns')
     let g:neocomplete#force_omni_input_patterns = {}
 endif
-let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\)\w*'
+let g:neocomplete#force_omni_input_patterns.python =
+    \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 " }}
 
 " setings for jstemmer/gotags {{
@@ -881,7 +882,7 @@ let g:pymode_options = 1
 let g:pymode_virtualenv = 0
 let g:pymode_lint_on_write = 0
 let g:pymode_lint_unmodified = 1
-let g:pymode_lint_ignore = ""
+let g:pymode_lint_ignore = "W0401"
 let g:pymode_rope_autoimport = 1
 let g:pymode_lint_cwindow = 0
 let g:pymode_rope_completion = 0
