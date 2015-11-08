@@ -886,9 +886,8 @@ let g:pymode_lint_ignore = "W0401"
 let g:pymode_rope_autoimport = 1
 let g:pymode_lint_cwindow = 0
 let g:pymode_rope_completion = 0
-let g:pymode_rope_goto_definition_cmd = 'e'
-let g:pymode_rope_organize_imports_bind = '<C-c>o'
-let g:pymode_rope_autoimport_bind = '<C-c>a'
+let g:pymode_rope_organize_imports_bind = '<leader>o'
+let g:pymode_rope_autoimport_bind = '<leader>a'
 set completeopt=menu
 " }}
 
@@ -897,6 +896,9 @@ let g:jedi#popup_select_first=0
 set completeopt=longest,menuone
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#popup_on_dot = 0
+let g:jedi#goto_command = '<leader>g'
+let g:jedi#goto_assignments_command = ''
+let g:jedi#rename_command = ''
 " }}
 
 " setting for vim-airline {{
