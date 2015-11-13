@@ -888,6 +888,8 @@ let g:pymode_lint_cwindow = 0
 let g:pymode_rope_completion = 0
 let g:pymode_rope_organize_imports_bind = '<leader>o'
 let g:pymode_rope_autoimport_bind = '<leader>a'
+au FileType python nnoremap <leader>l :PymodeLintAuto<cr>
+au FileType python nnoremap <leader>pt :PymodeLintToggle<cr>
 set completeopt=menu
 " }}
 
@@ -896,8 +898,8 @@ let g:jedi#popup_select_first=0
 set completeopt=longest,menuone
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#popup_on_dot = 0
-let g:jedi#goto_command = '<leader>g'
-let g:jedi#goto_assignments_command = ''
+let g:jedi#goto_command = '<leader>d'
+let g:jedi#goto_assignments_command = '<leader>g'
 let g:jedi#rename_command = ''
 " }}
 
@@ -937,5 +939,5 @@ set wildignore+=*.pyc,*.mo
 " }}
 
 " setting for rizzatti/dash.vim {{
-nmap <silent> <leader>d <Plug>DashSearch
+nmap <silent> <leader>k <Plug>DashSearch
 " }}
