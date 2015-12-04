@@ -33,6 +33,9 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'rizzatti/dash.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'othree/html5.vim'
+Plugin 'dyng/ctrlsf.vim'
+Plugin 'terryma/vim-multiple-cursors'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -571,13 +574,13 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 " => Spell checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
+"map <leader>ss :setlocal spell!<cr>
 
 "Shortcuts using <leader>
-map <leader>sn ]s
-map <leader>sp [s
-map <leader>sa zg
-map <leader>s? z=
+"map <leader>sn ]s
+"map <leader>sp [s
+"map <leader>sa zg
+"map <leader>s? z=
 
 
 """"""""""""""""""""""""""""""
@@ -940,4 +943,16 @@ set wildignore+=*.pyc,*.mo
 
 " setting for rizzatti/dash.vim {{
 nmap <silent> <leader>k <Plug>DashSearch
+" }}
+" setting for dyng/ctrlsf.vim {{
+nmap <leader>s <Plug>CtrlSFPrompt
+nmap <leader>S <Plug>CtrlSFCwordPath
+vmap <leader>s <Plug>CtrlSFVwordExec
+vmap <leader>S <Plug>CtrlSFVwordPath
+nnoremap <leader>t :CtrlSFToggle<CR>
+let g:ctrlsf_mapping = {
+    \ "next": "n",
+    \ "prev": "N",
+    \ }
+let g:ctrlsf_position = 'right'
 " }}
