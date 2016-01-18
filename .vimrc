@@ -278,8 +278,8 @@ set shiftwidth=4
 set tabstop=4
 set smarttab
 
-autocmd BufRead,BufNew,BufEnter *.html set shiftwidth=2
-autocmd BufRead,BufNew,BufEnter *.html set tabstop=2
+autocmd BufRead,BufNew,BufEnter *.html,*.css,*.scss,*.js set shiftwidth=2
+autocmd BufRead,BufNew,BufEnter *.html,*.css,*.scss,*.js set tabstop=2
 
 set lbr
 set tw=500
@@ -915,7 +915,7 @@ let g:airline_powerline_fonts = 1
 
 " setting for Yggdroot/indentLine {{
 let g:indentLine_color_term = 87
-let g:indentLine_fileTypeExclude = ['scss']
+" let g:indentLine_fileTypeExclude = ['scss']
 " }}
 
 " setting for nathanaelkane/vim-indent-guides {{
