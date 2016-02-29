@@ -36,6 +36,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'othree/html5.vim'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'Konfekt/FastFold'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -957,4 +958,11 @@ let g:ctrlsf_mapping = {
     \ "prev": "N",
     \ }
 let g:ctrlsf_position = 'right'
+" }}
+
+" setting for Konfekt/FastFold {{
+nmap zuz (FastFoldUpdate)
+let g:fastfold_savehook = 1
+let g:fastfold_fold_command_suffixes = ['x','X','a','A','o','O','c','C']
+let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 " }}
