@@ -17,7 +17,7 @@
     br = branch
     oneline = log --oneline --decorate
     onelog = log -p -1
-    glog = log --graph --decorate --oneline
+    glog = log --pretty=format:\"%C(auto)%h %C(magenta)<%ad> %C(green)[%an] %C(blue normal bold)| %Creset%s%C(auto)%d\" --graph --date=short
     amend = commit --amend -C HEAD
     pr = pull --rebase
     smu = submodule update
