@@ -959,6 +959,7 @@ let g:ctrlsf_mapping = {
     \ "prev": "N",
     \ }
 let g:ctrlsf_position = 'right'
+let g:ctrlsf_ignore_dir = ['alembic/versions']
 " }}
 
 " setting for Konfekt/FastFold {{
