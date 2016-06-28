@@ -38,6 +38,7 @@ Plugin 'dyng/ctrlsf.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Konfekt/FastFold'
 Plugin 'wesQ3/vim-windowswap'
+Plugin 'jmcantrell/vim-virtualenv'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -886,16 +887,19 @@ autocmd BufRead,BufNew,BufEnter * set foldlevel=999
 let g:pymode = 1
 let g:pymode_doc = 0
 let g:pymode_options = 1
+let g:pymode_warnings = 1
 let g:pymode_virtualenv = 0
+let g:pymode_lint_checkers = ['pyflakes']
 let g:pymode_lint_on_write = 0
 let g:pymode_lint_unmodified = 1
-let g:pymode_lint_ignore = "W0401"
+let g:pymode_lint_ignore = "W"
+let g:pymode_lint_cwindow = 1
+let g:pymode_rope = 1
 let g:pymode_rope_autoimport = 1
-let g:pymode_lint_cwindow = 0
 let g:pymode_rope_completion = 0
 let g:pymode_rope_organize_imports_bind = '<leader>o'
 let g:pymode_rope_autoimport_bind = '<leader>a'
-au FileType python nnoremap <leader>l :PymodeLintAuto<cr>
+au FileType python nnoremap <leader>pl :PymodeLintAuto<cr>
 au FileType python nnoremap <leader>pt :PymodeLintToggle<cr>
 set completeopt=menu
 " }}
@@ -959,7 +963,7 @@ let g:ctrlsf_mapping = {
     \ "prev": "N",
     \ }
 let g:ctrlsf_position = 'right'
-let g:ctrlsf_ignore_dir = ['alembic/versions']
+let g:ctrlsf_ignore_dir = ['ropeproject', 'alembic/versions']
 " }}
 
 " setting for Konfekt/FastFold {{
@@ -968,3 +972,7 @@ let g:fastfold_savehook = 1
 let g:fastfold_fold_command_suffixes = ['x','X','a','A','o','O','c','C']
 let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 " }}
+" setting for jmcantrell/vim-virtualenv{{ 
+let g:virtualenv_auto_activate = 1
+let g:virtualenv_stl_format = '[%n]'
+" 

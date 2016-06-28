@@ -53,7 +53,7 @@ plugins=(git brew capistrano encode64 pip osx autojump common-aliases virtualenv
 
 # User configuration
 
-export PATH="/Users/tangyue/.nvm/versions/node/v0.12.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -88,10 +88,13 @@ source $ZSH/oh-my-zsh.sh
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 export EDITOR=vim
 export LESS=FRX
 
-export DB_TEST_PWD='ch2m2_N3w'
-export DB_TEST_NAME='newchama'
-export DB_TEST_USR='newchama'
 alias vi=vim
+export WORKON_HOME="$PYENV_ROOT/versions"

@@ -9,7 +9,7 @@
     diff = auto
 [core]
     editor = vim
-	excludesfile = /home/tangyue/.gitignore
+	excludesfile = /Users/tangyue/.gitignore
 [alias]
     co = checkout
     ci = commit
