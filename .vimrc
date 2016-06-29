@@ -894,7 +894,7 @@ let g:pymode_lint_on_write = 0
 let g:pymode_lint_unmodified = 1
 let g:pymode_lint_ignore = "W"
 let g:pymode_lint_cwindow = 1
-let g:pymode_rope = 1
+let g:pymode_rope = 0
 let g:pymode_rope_autoimport = 1
 let g:pymode_rope_completion = 0
 let g:pymode_rope_organize_imports_bind = '<leader>o'
@@ -976,3 +976,5 @@ let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 let g:virtualenv_auto_activate = 1
 let g:virtualenv_stl_format = '[%n]'
 " 
+au FileType * nnoremap <leader>ll :ll<cr>
+au FileType * nnoremap <leader>cc :cc<cr>
