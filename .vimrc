@@ -849,7 +849,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <F3> :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\.pyc$', '\~$']
+let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__[[dir]]']
 let g:NERDTreeMapOpenVSplit = 'v'
 " }}
 
@@ -887,6 +887,7 @@ autocmd BufRead,BufNew,BufEnter * set foldlevel=999
 let g:pymode = 1
 let g:pymode_doc = 0
 let g:pymode_options = 1
+let g:pymode_options_colorcolumn = 0
 let g:pymode_warnings = 1
 let g:pymode_virtualenv = 0
 let g:pymode_lint_checkers = ['pyflakes']

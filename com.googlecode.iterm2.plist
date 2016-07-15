@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AboutToPasteTabsWithCancel</key>
+	<true/>
+	<key>AboutToPasteTabsWithCancel_selection</key>
+	<integer>2</integer>
 	<key>AdjustWindowForFontSizeChange</key>
 	<true/>
 	<key>AllowClipboardAccess</key>
@@ -129,11 +133,11 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>331 37 445 77 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>2264 305 606 456 1440 -180 1920 1057 </string>
+	<string>2264 363 606 456 1440 -180 1920 1057 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>2655 619 384 129 1440 -180 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2083 91 745 499 1440 -180 1920 1057 </string>
+	<string>1440 -162 1897 1039 1440 -180 1920 1057 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -733,6 +737,8 @@
 			<false/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
+			<key>Prevent Opening in a Tab</key>
+			<false/>
 			<key>Prompt Before Closing 2</key>
 			<integer>0</integer>
 			<key>Right Option Key Sends</key>
@@ -882,7 +888,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.17062222957611084</real>
+			<real>0.189635724852071</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -918,7 +924,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>99F5F10B-68CB-46C9-8637-353F08DAB333</string>
 	<key>NoSyncLastTipTime</key>
-	<real>488368034.75666302</real>
+	<real>488876662.35285997</real>
 	<key>NoSyncNeverRemindPrefsChangesLost</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -933,6 +939,8 @@
 	<real>464633717.80519402</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
 	<real>487828754.71198303</real>
+	<key>NoSyncTipsDisabled</key>
+	<true/>
 	<key>NoSyncTipsToNotShow</key>
 	<array>
 		<string>000</string>
@@ -941,6 +949,11 @@
 		<string>0002</string>
 		<string>0003</string>
 		<string>0004</string>
+		<string>0005</string>
+		<string>0006</string>
+		<string>0007</string>
+		<string>0008</string>
+		<string>0009</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
@@ -954,6 +967,8 @@
 	<false/>
 	<key>PasteFromClipboard</key>
 	<false/>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>4</integer>
 	<key>PinchToChangeFontSizeDisabled</key>
 	<true/>
 	<key>PointerActions</key>
@@ -1008,7 +1023,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-06-24T02:55:53Z</date>
+	<date>2016-07-01T03:12:54Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1022,7 +1037,7 @@
 	<key>SmartPlacement</key>
 	<true/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.40000000596046448</real>
+	<real>0.18463041461431068</real>
 	<key>SwitchTabModifier</key>
 	<integer>4</integer>
 	<key>SwitchWindowModifier</key>

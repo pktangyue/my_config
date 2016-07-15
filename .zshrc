@@ -49,7 +49,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew capistrano encode64 pip osx autojump common-aliases virtualenvwrapper docker docker-compose)
+plugins=(git brew capistrano encode64 pip osx autojump common-aliases virtualenvwrapper docker docker-compose nvm bower npm gulp)
 
 # User configuration
 
@@ -98,3 +98,4 @@ export LESS=FRX
 
 alias vi=vim
 export WORKON_HOME="$PYENV_ROOT/versions"
+export PROJECT_HOME="$HOME/project/"
