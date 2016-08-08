@@ -699,8 +699,6 @@ map <right> :tabnext<cr>
 imap <left> <esc>:tabprevious<cr>
 map <right> <esc>:tabnext<cr>
 
-let $django_path = '~/.pyvirtualenvs/genju/lib/python2.7/site-packages/django/'
-
 let g:vim_markdown_folding_disabled=1
 
 " settings for fatih/vim-go {{
@@ -895,7 +893,7 @@ let g:pymode_lint_on_write = 0
 let g:pymode_lint_unmodified = 1
 let g:pymode_lint_ignore = "W"
 let g:pymode_lint_cwindow = 1
-let g:pymode_rope = 0
+let g:pymode_rope = 1
 let g:pymode_rope_autoimport = 1
 let g:pymode_rope_completion = 0
 let g:pymode_rope_organize_imports_bind = '<leader>o'
