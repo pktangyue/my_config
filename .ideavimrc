@@ -1,0 +1,25 @@
+set ignorecase "Ignore case when searching
+set smartcase
+set hlsearch
+set magic "Set magic on, for regular expressions
+set nu
+
+let mapleader = ","
+let g:mapleader = ","
+
+map 0 ^
+
+nmap <c-o> :action Back<CR>
+nmap <c-i> :action Forward<CR>
+map <silent> <leader><cr> :noh<cr>
+
+map <leader>d :action GotoDeclaration<CR>
+map <leader>s :action FindInPath<CR>
+map <leader>f :action GotoFile<CR>
+map <leader>n :action FindUsages<CR>
+map <leader>p :action ReformatCode<CR>
+map <leader>o :action OptimizeImports<CR>
+map <leader>r :action Run<CR>
+map <left> :action PreviousTab<CR>
+map <right> :action NextTab<CR>
+map <leader>k :action DashLauncherAction<CR>
