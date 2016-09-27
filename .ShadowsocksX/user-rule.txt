@@ -1,1 +1,9 @@
+! rule: https://adblockplus.org/zh_CN/filters
 ||stackoverflow.com
+||gravatar.com
+||sstatic.net
+|http://fian.my.id/
+||quora.com
+||quoracdn.net
+||asyncio.org/
+@@||v2ex.com
