@@ -281,8 +281,8 @@ set shiftwidth=4
 set tabstop=4
 set smarttab
 
-autocmd BufRead,BufNew,BufEnter *.html,*.css,*.scss,*.js set shiftwidth=2
-autocmd BufRead,BufNew,BufEnter *.html,*.css,*.scss,*.js set tabstop=2
+autocmd BufRead,BufNew,BufEnter *.html,*.css,*.scss,*.js,*.yaml,*.yml set shiftwidth=2
+autocmd BufRead,BufNew,BufEnter *.html,*.css,*.scss,*.js,*.yaml,*.yml set tabstop=2
 
 set lbr
 set tw=500

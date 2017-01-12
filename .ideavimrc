@@ -23,3 +23,4 @@ map <leader>r :action Run<CR>
 map <left> :action PreviousTab<CR>
 map <right> :action NextTab<CR>
 map <leader>k :action DashLauncherAction<CR>
+map <leader>h :action Annotate<CR>

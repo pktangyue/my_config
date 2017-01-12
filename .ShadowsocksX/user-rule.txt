@@ -7,3 +7,11 @@
 ||quoracdn.net
 ||asyncio.org/
 @@||v2ex.com
+||memcached.org
+||python.org
+||vultr.com
+||github.io
+||codementor.io
+||bootstrapcdn.com
+||dataquest.io
+||gitbook.com
