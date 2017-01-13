@@ -49,7 +49,10 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew capistrano encode64 pip osx autojump common-aliases virtualenvwrapper docker docker-compose nvm bower npm gulp)
+plugins=(git brew capistrano encode64 pip osx autojump common-aliases docker docker-compose nvm bower npm gulp virtualenvwrapper)
+
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# export MANPATH="/usr/local/man:$MANPATH"
 
 # User configuration
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
@@ -61,13 +64,11 @@ export PYENV_ROOT="/usr/local/var/pyenv"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 export PATH="$PYENV_ROOT/shims:$PATH"
-export WORKON_HOME="$PYENV_ROOT/versions"
+export WORKON_HOME="$PYENV_ROOT/versions/"
 export PROJECT_HOME="$HOME/project/"
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+export VIRTUALENVWRAPPER_WORKON_CD=0
 pyenv virtualenvwrapper
-
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
