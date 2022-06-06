@@ -9,13 +9,14 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'fatih/vim-go'
+" Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-liquid'
 Plugin 'tpope/vim-haml'
 Plugin 'Shougo/neocomplete'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'Shougo/neosnippet.vim'
-Plugin 'tomasr/molokai'
+" Plugin 'tomasr/molokai'
+Plugin 'lifepillar/vim-solarized8'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/django.vim'
@@ -38,7 +39,7 @@ Plugin 'dyng/ctrlsf.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Konfekt/FastFold'
 Plugin 'wesQ3/vim-windowswap'
-Plugin 'jmcantrell/vim-virtualenv'
+"Plugin 'jmcantrell/vim-virtualenv'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -141,7 +142,6 @@ filetype plugin indent on    " required
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -234,12 +234,12 @@ if has("gui_running")
     set guioptions-=T
     set t_Co=256
     set background=dark
-    colorscheme molokai
+    colorscheme solarized8
     set nu
 else
     set t_Co=256
     set background=dark
-    colorscheme molokai
+    colorscheme solarized8
     set nu
 endif
 
@@ -883,6 +883,7 @@ autocmd BufRead,BufNew,BufEnter * set foldlevel=999
 
 " setting for python-mode {{
 let g:pymode = 1
+let g:pymode_python = 'python3'
 let g:pymode_doc = 0
 let g:pymode_options = 1
 let g:pymode_options_colorcolumn = 0
@@ -894,7 +895,7 @@ let g:pymode_lint_unmodified = 1
 let g:pymode_lint_ignore = "W"
 let g:pymode_lint_cwindow = 1
 let g:pymode_rope = 1
-let g:pymode_rope_autoimport = 1
+let g:pymode_rope_autoimport = 0
 let g:pymode_rope_completion = 0
 let g:pymode_rope_organize_imports_bind = '<leader>o'
 let g:pymode_rope_autoimport_bind = '<leader>a'

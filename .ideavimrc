@@ -9,9 +9,16 @@ let g:mapleader = ","
 
 map 0 ^
 
-nmap <c-o> :action Back<CR>
-nmap <c-i> :action Forward<CR>
+"nmap <c-o> :action Back<CR>
+"nmap <c-i> :action Forward<CR>
+nmap <C-o> <Action>(Back)
+nmap <C-i> <Action>(Forward)
 map <silent> <leader><cr> :noh<cr>
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
+noremap <leader>h <C-W>t
 
 map <leader>d :action GotoDeclaration<CR>
 map <leader>s :action FindInPath<CR>
@@ -19,8 +26,11 @@ map <leader>f :action GotoFile<CR>
 map <leader>n :action FindUsages<CR>
 map <leader>p :action ReformatCode<CR>
 map <leader>o :action OptimizeImports<CR>
-map <leader>r :action Run<CR>
+map <leader>i :action GotoImplementation<CR>
+map <leader>rr :action Run<CR>
+map <leader>rd :action Run<CR>
 map <left> :action PreviousTab<CR>
 map <right> :action NextTab<CR>
-map <leader>k :action DashLauncherAction<CR>
+map <leader>k :action SmartSearchAction<CR>
 map <leader>h :action Annotate<CR>
+"map <leader>p :action Tool_External Tools_Prettier<CR>

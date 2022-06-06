@@ -1,3 +1,4 @@
+#zmodload zsh/zprof
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/tangyue/.oh-my-zsh
 
@@ -49,16 +50,18 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew capistrano encode64 pip osx autojump common-aliases docker docker-compose nvm bower npm gulp virtualenvwrapper)
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export NVM_LAZY_LOAD=true
+
+plugins=(git brew capistrano encode64 pip osx autojump common-aliases docker docker-compose bower zsh-nvm npm gulp virtualenvwrapper)
+
+export PATH="/usr/local/opt/openssl/bin:/usr/local/opt/gettext/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # User configuration
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+export NVM_DIR="$HOME/.nvm"
 
 export PYENV_ROOT="/usr/local/var/pyenv"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
@@ -68,9 +71,25 @@ export WORKON_HOME="$PYENV_ROOT/versions/"
 export PROJECT_HOME="$HOME/project/"
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 export VIRTUALENVWRAPPER_WORKON_CD=0
-pyenv virtualenvwrapper
+export PIPENV_VENV_IN_PROJECT=1
+export PIPENV_DEFAULT_PYTHON_VERSION=3.6.3
+pyenv virtualenvwrapper_lazy
+
+eval "$(rbenv init -)"
+
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+
+eval "$(goenv init -)"
+export PATH="$HOME/.goenv/shims:$HOME/go/bin:$PATH"
+export GOPATH="$HOME/go"
+
+#eval $(docker-machine env default)
 
 source $ZSH/oh-my-zsh.sh
+
+# eval "$(pipenv --completion)"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -98,6 +117,17 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export EDITOR=vim
 export LESS=FRX
+#export DJANGO_SETTINGS_MODULE=bolome_wechat.tang_settings
 
 alias vi=vim
-
+alias pup='export http_proxy=127.0.0.1:1087;export https_proxy=$http_proxy'
+alias pdown='unset http_proxy;unset https_proxy'
+alias ip='curl ip.gs'
+#alias exiftool='exiftool -G -d "%F %T%z"'
+#
+#zprof
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib"
+export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include"
+export PKG_CONFIG_PATH="/usr/local/opt/mysql@5.7/lib/pkgconfig"
+export PATH="/usr/local/opt/mongodb@3.2/bin:$PATH"

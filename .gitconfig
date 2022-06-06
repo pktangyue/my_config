@@ -10,23 +10,31 @@
 [core]
     editor = vim
 	excludesfile = /Users/tangyue/.gitignore
-    gitproxy=~/gitproxy.sh
+    #gitproxy=~/gitproxy.sh
 [alias]
     co = checkout
     ci = commit
     st = status
     br = branch
-    oneline = log --oneline --decorate
-    onelog = log -p -1
+    oneline = log --no-merges --pretty=format:\"%C(auto)%h %C(green)[%an] %Creset%s\"
     glog = log --pretty=format:\"%C(auto)%h %C(magenta)<%ad> %C(green)[%an] %C(blue normal bold)| %Creset%s%C(auto)%d\" --graph --date=short
     amend = commit --amend -C HEAD
     pr = pull --rebase
     smu = submodule update
+    cleanx = clean -fdx -e .env -e .venv
+    pushstage = push origin head:stage
 [push]
     default = current
 [rerere]
 	enabled = true
-[http]
-	proxy = socks5://127.0.0.1:1080
-[https]
-	proxy = socks5://127.0.0.1:1080
+#[http]
+#   proxy = socks5://127.0.0.1:1086
+#[https]
+#   proxy = socks5://127.0.0.1:1086
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[url "ssh://git@git.qutoutiao.net"]
+    insteadOf = https://git.qutoutiao.net
