@@ -120,9 +120,9 @@ export LESS=FRX
 #export DJANGO_SETTINGS_MODULE=bolome_wechat.tang_settings
 
 alias vi=vim
-alias pup='export http_proxy=127.0.0.1:1087;export https_proxy=$http_proxy'
-alias pdown='unset http_proxy;unset https_proxy'
-alias ip='curl ip.gs'
+alias pup='export ALL_PROXY=socks5://127.0.0.1:13659'
+alias pdown='unset ALL_PROXY'
+alias ipgs='curl cip.cc'
 #alias exiftool='exiftool -G -d "%F %T%z"'
 #
 #zprof
