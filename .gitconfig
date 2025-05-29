@@ -1,6 +1,6 @@
 [user]
-    name = pktangyue
-    email = tangyue1004@gmail.com
+    name = 九岭
+    email = tangyue.tang@antgroup.com
 [color]
     ui = auto
     status = auto
@@ -25,6 +25,8 @@
     pushstage = push origin head:stage
 [push]
     default = current
+[pull]
+    rebase = false
 [rerere]
 	enabled = true
 #[http]
@@ -36,5 +38,3 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
-[url "ssh://git@git.qutoutiao.net"]
-    insteadOf = https://git.qutoutiao.net

@@ -28,7 +28,7 @@ map <leader>p :action ReformatCode<CR>
 map <leader>o :action OptimizeImports<CR>
 map <leader>i :action GotoImplementation<CR>
 map <leader>rr :action Run<CR>
-map <leader>rd :action Run<CR>
+map <leader>rd :action Debug<CR>
 map <left> :action PreviousTab<CR>
 map <right> :action NextTab<CR>
 map <leader>k :action SmartSearchAction<CR>

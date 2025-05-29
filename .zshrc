@@ -53,7 +53,8 @@ ZSH_THEME="robbyrussell"
 
 export NVM_LAZY_LOAD=true
 
-plugins=(git brew capistrano encode64 pip osx autojump common-aliases docker docker-compose bower zsh-nvm npm gulp virtualenvwrapper)
+#plugins=(git brew capistrano encode64 pip macos autojump common-aliases docker docker-compose bower kubectl argocd)
+plugins=(git brew capistrano encode64 pip macos autojump common-aliases bower kubectl argocd)
 
 export PATH="/usr/local/opt/openssl/bin:/usr/local/opt/gettext/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -63,27 +64,9 @@ export PATH="/usr/local/opt/openssl/bin:/usr/local/opt/gettext/bin:/usr/local/sb
 
 export NVM_DIR="$HOME/.nvm"
 
-export PYENV_ROOT="/usr/local/var/pyenv"
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-export PATH="$PYENV_ROOT/shims:$PATH"
-export WORKON_HOME="$PYENV_ROOT/versions/"
-export PROJECT_HOME="$HOME/project/"
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-export VIRTUALENVWRAPPER_WORKON_CD=0
-export PIPENV_VENV_IN_PROJECT=1
-export PIPENV_DEFAULT_PYTHON_VERSION=3.6.3
-pyenv virtualenvwrapper_lazy
-
-eval "$(rbenv init -)"
-
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
-
-eval "$(goenv init -)"
-export PATH="$HOME/.goenv/shims:$HOME/go/bin:$PATH"
-export GOPATH="$HOME/go"
 
 #eval $(docker-machine env default)
 
@@ -120,9 +103,13 @@ export LESS=FRX
 #export DJANGO_SETTINGS_MODULE=bolome_wechat.tang_settings
 
 alias vi=vim
-alias pup='export ALL_PROXY=socks5://127.0.0.1:13659'
-alias pdown='unset ALL_PROXY'
+alias pup='export https_proxy=socks5://127.0.0.1:13659;export http_proxy=socks5://127.0.0.1:13659'
+alias pdown='unset https_proxy;unset http_proxy;unset all_proxy;'
 alias ipgs='curl cip.cc'
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+alias argo='argo -n argo'
+alias k='kubectl'
+alias dfimage='docker run -v /var/run/docker.sock:/var/run/docker.sock --rm alpine/dfimage'
 #alias exiftool='exiftool -G -d "%F %T%z"'
 #
 #zprof
@@ -131,3 +118,29 @@ export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib"
 export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include"
 export PKG_CONFIG_PATH="/usr/local/opt/mysql@5.7/lib/pkgconfig"
 export PATH="/usr/local/opt/mongodb@3.2/bin:$PATH"
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/
+export MAVEN_HOME=/usr/local/apache-maven-3.6.3
+export HADOOP_HOME=/usr/local/hadoop-2.8.5
+export PATH=$MAVEN_HOME/bin:$HADOOP_HOME/bin:$JAVA_HOME/bin:$PATH
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PYTHONDONTWRITEBYTECODE=1
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+#eval "$(goenv init -)"
+#export PATH="$HOME/.goenv/shims:$HOME/go/bin:$PATH"
+#export GOPATH="$HOME/go"
+#
+#source ~/.argo_com.zsh
+#
+#export KUSION_HOME="$HOME/.kusion"
+#
+#export PATH="$KUSION_HOME/bin:$PATH"
+#export PATH="$KUSION_HOME/kclvm/bin:$PATH"
+#export PATH="/root/go/bin:$PATH"
+#export PATH="$HOME/.ssctl/bin:$PATH"
+#
+#source "$HOME/.kusionup/env"
