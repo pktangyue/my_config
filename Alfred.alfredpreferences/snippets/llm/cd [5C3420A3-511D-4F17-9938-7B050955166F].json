@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "cd \/home\/t4\/code\/jiuling\/llm_model_platform && conda activate jiuling",
+    "uid" : "5C3420A3-511D-4F17-9938-7B050955166F",
+    "name" : "cd",
+    "keyword" : "cd"
+  }
+}

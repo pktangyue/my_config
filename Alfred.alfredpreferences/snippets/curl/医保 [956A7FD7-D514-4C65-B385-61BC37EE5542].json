@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "curl -X 'POST' http:\/\/106.14.67.177:8080\/api\/v1\/hzyb\/query_answer -H 'accept: application\/json'   -H 'Content-Type: application\/json'   -d '{\n    \"sceneId\":\"hzybxiaozhi\",\n    \"app_id\": 4,\n    \"query\": \"灵活就业人员医疗费结算有何规定？\",\n    \"user_id\": \"304470\"\n}'",
+    "uid" : "956A7FD7-D514-4C65-B385-61BC37EE5542",
+    "name" : "医保",
+    "keyword" : "yibao"
+  }
+}
